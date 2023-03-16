@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const bodyParser = require('bodyParser');
+const bodyParser = require('body-parser');
 
 module.exports = {
   mode: 'universal',
