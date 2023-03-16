@@ -67,13 +67,13 @@ module.exports = {
   },
   env: {
     baseUrl: process.env.BASE_URL || 'https://vue-http-demo-b7ad7-default-rtdb.europe-west1.firebasedatabase.app',
-    fbAPIKey: 'AIzaSyCyVQwn5HCfSC06aoQbRM0un3nE93PNvcg',
+    fbAPIKey: 'AIzaSyCyVQwn5HCfSC06aoQbRM0un3nE93PNvcg'
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
   },
-  router: {
-    middleware: 'log',
-  }
+  // router: {
+  //   middleware: 'log'
+  // }
 }
