@@ -24,7 +24,7 @@ const createStore = () => {
                 thumbnail:
                   "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
               },
-              
+
               {
                 id: "2",
                 title: "Second Post",
