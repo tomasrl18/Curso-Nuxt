@@ -3,59 +3,28 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts"/>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
     PostList
   },
-
-  asyncData(context) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-      resolve({
-        loadedPosts: [
-          { 
-            id: '1',
-            title: 'First Post',
-            previewText: 'This is out first post!',
-            thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
-          },
-
-          { 
-            id: '2',
-            title: 'Second Post',
-            previewText: 'This is out second post!',
-            thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
-          }
-        ]
-      }) 
-    }, 1000);
-    })
-    .then(data => {
-      return data
-      
-    })
-    .catch(e => {
-      context.error(new Error());
-    })
-  },
-
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
   // data() {
   //   return {
   //     loadedPosts: []
-  //   }
+  //   };
   // },
-
-  created() {
-    
-  }
-}
+};
 </script>
 
 
@@ -65,7 +34,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
