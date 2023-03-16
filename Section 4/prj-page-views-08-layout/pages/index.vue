@@ -15,24 +15,36 @@ export default {
     PostList
   },
 
-  data() {
-    return {
-      loadedPosts: [
-        { 
-          id: '1',
-          title: 'First Post',
-          previewText: 'This is out first post!',
-          thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
-        },
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          { 
+            id: '1',
+            title: 'First Post',
+            previewText: 'This is out first post!',
+            thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
+          },
 
-        { 
-          id: '2',
-          title: 'Second Post',
-          previewText: 'This is out second post!',
-          thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
-        }
-      ]
-    }
+          { 
+            id: '2',
+            title: 'Second Post',
+            previewText: 'This is out second post!',
+            thumbnail: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
+          }
+        ]
+      }) 
+    }, 1500);
+  },
+
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   }
+  // },
+
+  created() {
+    
   }
 }
 </script>
